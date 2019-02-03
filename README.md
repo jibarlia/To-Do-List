@@ -1,2 +1,0 @@
-# vacation-list-v2
-
