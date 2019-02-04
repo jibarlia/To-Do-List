@@ -7,7 +7,7 @@ const ButtonList = props => {
     return (
       <Button
         name={b}
-        state={props.buttonActive === b.toLowerCase() ? "disabled" : null}
+        state={props.buttonActive === b.toLowerCase() ? "styleDisabled" : null}
         buttonStyle={"style1"}
         onClick={props.onClick}
         value={b.toLowerCase()}

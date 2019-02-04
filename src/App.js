@@ -46,6 +46,7 @@ class App extends Component {
 
   handleFilter = e => {
     const filter = e.target.value;
+    console.log(filter);
     this.setState({
       filterAction: filter.toLowerCase()
     });
@@ -63,18 +64,21 @@ class App extends Component {
   };
 
   render() {
+    console.log(this.state.list.length);
     return (
       <Fragment>
         <Nav />
-        <main className="container mx-auto flex flex-col items-center">
+        <main className="container mx-auto flex flex-col items-center w-full">
           <Form handleList={this.handleList} handleReset={this.resetHandler} />
-          <RenderList
-            tasks={this.state.list}
-            filter={this.state.filterAction}
-            onChecked={this.onChecked}
-            handleDelete={this.handleDelete}
-          />
-          <div className="flex items-center py-2 justify-center">
+          {this.state.list.length > 0 && (
+            <RenderList
+              tasks={this.state.list}
+              filter={this.state.filterAction}
+              onChecked={this.onChecked}
+              handleDelete={this.handleDelete}
+            />
+          )}
+          <div className="flex items-center m-8 justify-center">
             <ButtonList
               buttonList={["all", "active", "completed"]}
               buttonActive={this.state.filterAction}
