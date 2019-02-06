@@ -21,7 +21,6 @@ class App extends Component {
       name: taskName,
       state: "active"
     });
-    console.log("push", newList);
     this.setState({
       list: newList
     });
