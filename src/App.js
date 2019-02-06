@@ -46,7 +46,6 @@ class App extends Component {
 
   handleFilter = e => {
     const filter = e.target.value;
-    console.log(filter);
     this.setState({
       filterAction: filter.toLowerCase()
     });
@@ -57,14 +56,12 @@ class App extends Component {
       task.state = "active";
       return task;
     });
-    console.log("newList", newList);
     this.setState({
       list: newList
     });
   };
 
   render() {
-    console.log(this.state.list.length);
     return (
       <Fragment>
         <Nav />
